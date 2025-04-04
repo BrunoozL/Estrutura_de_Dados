@@ -6,19 +6,28 @@ e exiba os produtos com preços acima de R$ 50.
 */
 
 const produtos = {
-    A001: {
-        nome: "Produto 1",
+    P001: {
+        nome: "Camiseta",
         preco: 19.99
     },
 
-    A002: {
-        nome: "Produto 2",
+    P002: {
+        nome: "Calça",
         preco: 39.99
     },
 
-    A003: {
-        nome: "Produto 3",
+    P003: {
+        nome: "Blusa",
         preco: 54.99
     }
-};
+}
 
+for(const codigo in produtos)
+{
+    if(produtos[codigo].preco > 50)
+    {
+        console.log(`${codigo}: ${produtos[codigo].nome} -> ${produtos[codigo].preco}`);
+    }
+    else
+        console.log("ERRO: Produto menor que 50 reais.");
+}
