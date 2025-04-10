@@ -11,6 +11,6 @@ const alunos = {
     M789: "Weverton"
 }
 
-Object.entries(alunos).forEach(([chave, valor]) => {
-    console.log(`${chave}: ${valor}`);
-})
+for(let chave in alunos){
+    console.log(`${chave}: ${alunos[chave]}`);
+}
