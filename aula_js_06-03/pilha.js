@@ -53,7 +53,7 @@ class MinhaPilha {
         if (this.tamanho === 0) {
             return undefined; // Se a pilha estiver vazia, não tem o que retorna
         }
-        return this.ites;
+        return this.items;
     }
 }
 
