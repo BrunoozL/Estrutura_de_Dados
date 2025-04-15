@@ -6,16 +6,16 @@ a ordem em que saem (pop), mostrando que o último a entrar é o primeiro a sair
 Desafio extra: inverter a ordem da pilha usando uma segunda pilha.
 */
 
-const MinhaPilha = require('./exerPilha');
+const pilha = [];
+const cartas = ["A", "B", "C", "D", "E"];
 
-const cartas = new MinhaPilha();
+for (let valor of cartas)
+{
+    pilha.push(valor);
+}
+console.log(pilha);
 
-cartas.adicionar("B"); // Primeiro que foi adicionado na pilha --> Ultima posição a sair
-cartas.adicionar("C");
-cartas.adicionar("E");
-cartas.adicionar("A");
-cartas.adicionar("D"); // Ultimo que foi adicionado na pilha --> Primeiro a sair
-
-console.log(cartas.listar());
-
-console.log(cartas.remover()); // Saída: D
+while (pilha.length > 0)
+{
+    console.log("Retirando carta da pilha: " + pilha.pop());
+}

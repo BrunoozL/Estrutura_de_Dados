@@ -11,20 +11,9 @@ const pilha1 = new MinhaPilha();
 pilha1.adicionar("A");
 pilha1.adicionar("B");
 pilha1.adicionar("C");
+pilha1.adicionar("D");
 
 const pilha2 = pilha1;
-
-console.log(pilha2);
-
-console.log(pilha2.remover());
-let teste = pilha2.topo();
-
-/*
-const pilha1 = new MinhaPilha();
-
-pilha1.adicionar("A");
-pilha1.adicionar("B");
-pilha1.adicionar("C");
 
 const read = require('readline-sync');
 let opcao;
@@ -51,14 +40,9 @@ do {
         let continuar = read.question("Pressione qualquer tecla para continuar.");
         console.log("");
     }
-    else 
-    console.log("Opção Inválida.");
-    console.log("");
-
 
 } while (opcao !== 0)
 console.log("SAIDA");
-*/
 
 /*
 console.log(pilha1.remover());
