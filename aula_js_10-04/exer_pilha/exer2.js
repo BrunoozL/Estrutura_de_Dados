@@ -13,7 +13,7 @@ pilha1.adicionar("B");
 pilha1.adicionar("C");
 pilha1.adicionar("D");
 
-const pilha2 = pilha1;
+const pilha2 = new MinhaPilha();
 
 const read = require('readline-sync');
 let opcao;
@@ -25,20 +25,38 @@ do {
     console.log("0 - SAIR");
     opcao = parseFloat(read.question("R: "));
     
-    if(opcao === 1)
+    if(pilha1.tamanho == 0)
     {
-        valor = pilha1.topo();
-        console.log(pilha1.remover());
-        console.log(pilha1.listar());
-        let continuar = read.question("Pressione qualquer tecla para continuar.");
-        console.log("");
+        console.log("Naõ tem o que desfazer.")
     }
-    else if (opcao === 2)
+    else
     {
-        pilha1.adicionar(valor);
-        console.log(pilha1.listar());
-        let continuar = read.question("Pressione qualquer tecla para continuar.");
-        console.log("");
+        if(opcao === 1)
+        {
+            valor = pilha1.topo();
+            pilha2.adicionar(valor);
+            console.log(pilha1.remover());
+            console.log(pilha1.listar());
+            let continuar = read.question("Pressione qualquer tecla para continuar.");
+            console.log("");
+        }
+    }
+
+    if(pilha2.tamanho == 0)
+    {
+        console.log("Não tem o que refazer.");
+    }
+
+    else
+    {
+        if (opcao === 2)
+        {
+            pilha1.adicionar(pilha2.topo());
+            pilha2.remover();
+            console.log(pilha1.listar());
+            let continuar = read.question("Pressione qualquer tecla para continuar.");
+            console.log("");
+        }
     }
 
 } while (opcao !== 0)
