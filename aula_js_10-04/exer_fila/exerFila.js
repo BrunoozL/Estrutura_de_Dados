@@ -15,7 +15,7 @@ class Fila
     }
 
     // Remove e retorna o primeiro elemento da fila (dequeue)
-    dequue()
+    dequeue()
     {
         if(this.isEmpty())
         {

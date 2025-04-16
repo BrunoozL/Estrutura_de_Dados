@@ -23,7 +23,7 @@ do {
     console.log("1 - Desfazer");
     console.log("2 - Refazer");
     console.log("0 - SAIR");
-    opcao = parseFloat(read.question("R: "));
+    opcao = parseInt(read.question("R: "));
     
     if(pilha1.tamanho == 0)
     {
