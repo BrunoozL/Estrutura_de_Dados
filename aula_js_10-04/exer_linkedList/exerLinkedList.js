@@ -13,6 +13,7 @@ class LinkedList {
     constructor()
     {
         this.head = null; // A lista começa vazia
+        this.current = null;
     }
 
     // Inserir no ínicio da fila
@@ -31,6 +32,7 @@ class LinkedList {
         if(this.head === null)
         {
             this.head = newNode;
+            this.current = newNode;
             return;
         }
 
@@ -101,6 +103,24 @@ class LinkedList {
         }
 
         console.log(list + 'null');
+    }
+
+
+    playNext()
+    {
+        if (this.current && this.current.next)
+        {
+            this.current = this.current.next;
+            console.log("Tocando próxima música:", this.current.value);
+        } 
+        else if (this.current)
+        {
+            console.log("Última música da playlist. Não há próxima.");
+        }
+        else
+        {
+            console.log("A playlist está vazia.");
+        }
     }
 }
 
